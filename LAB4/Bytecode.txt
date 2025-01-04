@@ -1,0 +1,1 @@
+('STORE_NAME', 'doc1', 'function_call')('STORE_NAME', 'doc2', 'function_call')('STORE_NAME', 'n1', 'function_call')('STORE_NAME', 'a', None)('STORE_NAME', 'b', None)('STORE_NAME', 'b', 10)('STORE_NAME', 'b', None)

@@ -1,0 +1,27 @@
+function document createDocument() {
+	document newDoc;
+	return newDoc;
+}
+
+function document getNode() {
+	document newNode;
+	return newNode;
+}
+
+
+begin
+	document doc1 = createDocument();
+	document doc2 = createDocument();
+    createDocument();
+	node n1 = getNode();
+    int a;
+    int b;
+
+	if (n1 > 0) then {
+    	a = 20;
+    	a = a + 5;
+	} else {
+    	b = 10;
+    	b = b - 2;
+	}
+end

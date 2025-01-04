@@ -1,0 +1,39 @@
+lexer grammar MyLanguageLexer;
+
+DOCUMENT: 'document';
+NODE: 'node';
+ATTRIBUTE: 'attribute';
+FUNCTION: 'function';
+IF: 'if';
+THEN: 'then';
+ELSE: 'else';
+BEGIN: 'begin';
+END: 'end';
+RETURN: 'return';
+
+INT: 'int';
+
+ASSIGN: '=';
+PLUS: '+';
+MINUS: '-';
+LS: '<';
+GT: '>';
+DIV: '/';
+MULT: '*';
+LPAREN: '(';
+RPAREN: ')';
+LBRACE: '{';
+RBRACE: '}';
+SEMI: ';';
+COMMA: ',';       	 
+
+// Идентификаторы и литералы
+ID: [a-zA-Z_][a-zA-Z_0-9]*;	 
+INT_LIT: [0-9]+;
+STR_LIT: [a-zA-Z]+;
+
+// Пробелы и комментарии
+WS: [ \t\r\n]+ -> skip;
+LINE_COMMENT: '//' ~[\r\n]* -> skip;
+
+

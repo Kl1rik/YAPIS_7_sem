@@ -1,0 +1,18 @@
+func fee(x, y){
+      if (x > y) {
+        return x;
+      } else {
+        return y;
+      };
+      }
+    
+    a = foo(10, 20);
+    b = 1;
+    
+    for (i = 0; i < 10; i++) {
+            print(i);
+        };
+        
+    while (a > 1){
+        print(i);
+    };

@@ -1,0 +1,29 @@
+function int multiply(int a, int b) {
+	return a * b;
+}
+
+function document getNode() {
+	document newNode;
+	return newNode;
+}
+
+begin
+	int x = 5;
+	int y = 3;
+	int result;
+	result = x*y;
+    
+	if (result > 10) then {
+    	document doc;
+    	node n;
+    	getNode();
+    	if (n > 0) then {
+        	result = result + 1;
+    	} else {
+        	result = result - 1;
+    	}
+	} else {
+    	result = result / 2;
+	}
+end
+

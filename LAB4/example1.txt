@@ -1,0 +1,15 @@
+function int add(int a, int b) {
+	return a + b;
+}
+
+begin
+	int x = 10;
+	document doc;
+	node n = getNode(doc);
+	if (x > 5) then {
+    	x = x + 10;
+	} else {
+    	x = 0;
+	}
+end
+

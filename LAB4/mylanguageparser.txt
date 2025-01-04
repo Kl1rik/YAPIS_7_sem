@@ -1,0 +1,87 @@
+parser grammar MyLanguageParser;
+
+options { tokenVocab=MyLanguageLexer; }
+
+program
+	: functionDecl* block
+	;
+
+block
+	: BEGIN statement* END
+	| LBRACE statement* RBRACE
+	| LPAREN exprList? RPAREN
+	;
+
+statement
+	: varDecl   	 
+	| assignment               	 
+	| ifStatement              	 
+	| functionCall             	 
+	| RETURN expr SEMI
+	;
+
+varDecl
+	: type ID ASSIGN INT_LIT SEMI
+	| type ID SEMI
+	| ID ASSIGN ID SEMI
+	| ID ASSIGN functionCall
+	| type ID ASSIGN functionCall
+	;
+
+assignment
+	: ID ASSIGN expr SEMI
+	;
+
+ifStatement
+	: IF expr THEN block ELSE block
+	;
+
+functionDecl
+	: FUNCTION type ID LPAREN (paramList)? RPAREN block
+	;
+
+functionCall
+	: ID LPAREN exprList? RPAREN SEMI   // Вызов функции
+	;
+
+paramList
+	: param (COMMA param)*          	// Список параметров функции
+	;
+
+param
+	: type ID
+	| ID
+	| INT_LIT
+	;
+
+exprList
+	: expr (COMMA expr)*            	// Список выражений (аргументы функции)
+	;
+
+expr
+	: expr operand expr               	// Сравнение
+	| LPAREN expr RPAREN
+    | ID ASSIGN functionCall
+	| ID LPAREN paramList RPAREN                            	// Идентификатор (переменная или функция)
+	| INT_LIT
+	| ID
+	| ID LPAREN expr RPAREN // Целое число
+	| functionCall
+	;
+    
+type
+	: DOCUMENT
+	| NODE
+	| ATTRIBUTE
+	| INT
+	;
+	
+operand
+    : PLUS
+    | MINUS
+    | GT
+    | LS
+    | MULT
+    | DIV
+    ;
+
